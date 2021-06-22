@@ -7,7 +7,7 @@ services:
       - $HOME/mongoclusterdata/nodo1:/data/db
     networks:
       - mongocluster
-    command: mongod --replSet usuarios
+    command: mongod --replSet lab2
   nodo2:
     image: mongo
     ports:
@@ -16,7 +16,7 @@ services:
       - $HOME/mongoclusterdata/nodo2:/data/db
     networks:
       - mongocluster
-    command: mongod --replSet usuarios
+    command: mongod --replSet lab2
     depends_on :
       - nodo1
   nodo3:
@@ -27,7 +27,7 @@ services:
       - $HOME/mongoclusterdata/nodo3:/data/db
     networks:
       - mongocluster
-    command: mongod --replSet usuarios
+    command: mongod --replSet lab2
     depends_on :
         - nodo2
 
